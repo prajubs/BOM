@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Component Dashboard — Futuristic BOM</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- html2pdf -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo-glow"></div>
+        <h1>Component Dashboard</h1>
+        <span class="sub">Futuristic BOM Manager</span>
+      </div>
+      <div class="actions">
+        <button id="exportPdfBtn" class="btn neon">
+          <i class="fa-solid fa-file-pdf"></i> Export to PDF
+        </button>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main class="container">
+      <!-- Form Section -->
+      <section class="card form-card">
+        <h2>Add Component</h2>
+        <form id="componentForm" autocomplete="off">
+          <div class="row">
+            <label>Component Name</label>
+            <input id="compName" type="text" placeholder="e.g., LM7805 Regulator" required />
+          </div>
+
+          <div class="row">
+            <label>Package</label>
+            <input id="compPackage" type="text" placeholder="e.g., TO-220, SMD, DIP" required />
+          </div>
+
+          <div class="row">
+            <label>Quantity</label>
+            <input id="compQty" type="number" min="1" value="1" required />
+          </div>
+
+          <div class="row">
+            <label>Image (JPG/PNG)</label>
+            <input id="compImage" type="file" accept="image/*" />
+            <small class="hint">Image will be resized to fit perfectly in table & PDF.</small>
+          </div>
+
+          <div class="row row-actions">
+            <button type="submit" class="btn add neon"><i class="fa-solid fa-plus"></i> Add Component</button>
+            <button id="clearAllBtn" type="button" class="btn ghost">Clear All</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Table Section -->
+      <section class="card list-card">
+        <h2>Component List</h2>
+        <div id="tableWrap" class="table-wrap">
+          <table id="compTable">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Image</th>
+                <th>Component Name</th>
+                <th>Package</th>
+                <th>Quantity</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="compTbody">
+              <!-- rows injected dynamically -->
+            </tbody>
+          </table>
+        </div>
+        <div class="empty" id="emptyHint">No components yet. Add one from the form above.</div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <small>Made with ♥ — Futuristic UI · LocalStorage · html2pdf</small>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
