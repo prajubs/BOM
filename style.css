@@ -1,0 +1,131 @@
+:root{
+    --bg:#081018;
+    --card:#0d1720aa;
+    --glass:#0f1b26bb;
+    --accent1:#00e5ff; /* cyan */
+    --accent2:#9b5cff; /* purple */
+    --muted:#9fb0c3;
+    --glass-border: rgba(255,255,255,0.04);
+    --radius:14px;
+    --max-img-size:100px;
+    font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  }
+  
+  /* Global */
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    background:
+      radial-gradient(1200px 400px at 10% 10%, rgba(155,92,255,0.06), transparent 6%),
+      radial-gradient(900px 300px at 90% 90%, rgba(0,229,255,0.03), transparent 8%),
+      var(--bg);
+    color:#dbe9f2;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    padding:28px;
+  }
+  
+  /* wrapper */
+  .app{
+    max-width:1200px;
+    margin:0 auto;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+  }
+  
+  /* topbar */
+  .topbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px;
+    border-radius:18px;
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border:1px solid var(--glass-border);
+    box-shadow: 0 6px 30px rgba(2,6,23,0.6);
+    backdrop-filter: blur(6px) saturate(120%);
+  }
+  .brand{display:flex;align-items:center;gap:14px}
+  .logo-glow{
+    width:46px;height:46px;border-radius:10px;
+    background:linear-gradient(135deg,var(--accent1),var(--accent2));
+    box-shadow: 0 6px 24px rgba(155,92,255,0.14), 0 2px 6px rgba(0,229,255,0.06);
+    border:1px solid rgba(255,255,255,0.06);
+  }
+  .brand h1{margin:0;font-size:18px;letter-spacing:0.2px}
+  .brand .sub{display:block;font-size:12px;color:var(--muted);margin-top:2px}
+  
+  /* buttons */
+  .btn{
+    border:0;padding:10px 14px;border-radius:10px;font-weight:600;
+    cursor:pointer;background:transparent;color:inherit;
+  }
+  .btn.neon{
+    background:linear-gradient(90deg, rgba(0,229,255,0.12), rgba(155,92,255,0.12));
+    border:1px solid rgba(255,255,255,0.04);
+    box-shadow: 0 6px 18px rgba(0,229,255,0.04), 0 2px 8px rgba(155,92,255,0.03);
+  }
+  .btn.ghost{
+    border:1px dashed rgba(255,255,255,0.03); color:var(--muted);
+  }
+  .btn.add{display:flex;gap:8px;align-items:center}
+  .btn i{margin-right:6px}
+  
+  /* main container */
+  .container{
+    display:grid;
+    grid-template-columns: 420px 1fr;
+    gap:18px;
+  }
+  
+  /* cards */
+  .card{
+    background:var(--card);
+    padding:18px;
+    border-radius:var(--radius);
+    border:1px solid var(--glass-border);
+    box-shadow: 0 10px 30px rgba(2,6,23,0.5);
+    backdrop-filter: blur(6px) saturate(120%);
+  }
+  .form-card h2, .list-card h2{margin:0 0 12px 0}
+  
+  /* form rows */
+  .row{display:flex;flex-direction:column;margin-bottom:12px}
+  .row label{font-size:13px;color:var(--muted);margin-bottom:6px}
+  .row input[type="text"], .row input[type="number"], .row input[type="file"]{
+    background:transparent;border:1px solid rgba(255,255,255,0.03);padding:10px;border-radius:10px;color:inherit;
+  }
+  .hint{font-size:12px;color:var(--muted);margin-top:6px}
+  
+  /* table */
+  .table-wrap{overflow:auto}
+  table{width:100%;border-collapse:collapse;font-size:14px;color:#dbe9f2}
+  th,td{text-align:left;padding:10px;border-bottom:1px solid rgba(255,255,255,0.02)}
+  thead th{font-size:13px;color:var(--muted);font-weight:600}
+  td img.thumb{
+    width:var(--max-img-size);
+    height:var(--max-img-size);
+    border-radius:8px;
+    object-fit:contain;
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+    border:1px solid rgba(255,255,255,0.03);
+    padding:6px;
+  }
+  
+  /* actions */
+  .table-actions .btn{margin-right:8px}
+  
+  /* responsive */
+  @media (max-width:980px){
+    .container{grid-template-columns:1fr; }
+    .brand h1{font-size:16px}
+  }
+  
+  /* empty hint */
+  .empty{padding:18px;color:var(--muted);text-align:center}
+  
+  /* footer */
+  .footer{text-align:center;color:var(--muted);font-size:13px;padding:8px}
+  
