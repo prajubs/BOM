@@ -228,11 +228,11 @@ exportBtn.addEventListener('click', () => {
   table.innerHTML = `
     <thead>
       <tr>
-        <th style="text-align:left;padding:8px;border-bottom:1px solid #ddd">#</th>
-        <th style="text-align:left;padding:8px;border-bottom:1px solid #ddd">Image</th>
-        <th style="text-align:left;padding:8px;border-bottom:1px solid #ddd">Component Name</th>
-        <th style="text-align:left;padding:8px;border-bottom:1px solid #ddd">Package</th>
-        <th style="text-align:left;padding:8px;border-bottom:1px solid #ddd">Quantity</th>
+        <th style="text-align:left;padding:8px;border-bottom:1px solid #ddd;color: black">#</th>
+        <th style="text-align:left;padding:8px;border-bottom:1px solid #ddd;color: black">Image</th>
+        <th style="text-align:left;padding:8px;border-bottom:1px solid #ddd;color: black">Component Name</th>
+        <th style="text-align:left;padding:8px;border-bottom:1px solid #ddd;color: black">Package</th>
+        <th style="text-align:left;padding:8px;border-bottom:1px solid #ddd;color: black;">Quantity</th>
       </tr>
     </thead>
   `;
